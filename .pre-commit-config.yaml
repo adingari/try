@@ -1,0 +1,20 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gitleaks
+        name: gitleaks (secrets in staged changes)
+        entry: gitleaks git --pre-commit --staged --redact --verbose
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: tripwire
+        name: tripwire (personal strings in staged changes)
+        entry: python3 scripts/tripwire.py
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: tripwire-msg
+        name: tripwire (personal strings in commit message)
+        entry: python3 scripts/tripwire.py --msg
+        language: system
+        stages: [commit-msg]

@@ -1,0 +1,31 @@
+# Allowlist: ignore everything, then permit known paths one by one.
+# A new file type stays out of git until someone deliberately adds a line here.
+*
+!*/
+
+!.gitignore
+!.gitleaks.toml
+!.pre-commit-config.yaml
+!LICENSE
+!README.md
+!SECURITY.md
+!pyproject.toml
+
+!.github/**/*.yml
+!docs/**/*.md
+!examples/**/*.md
+!examples/**/*.yaml
+!scripts/*.py
+!scripts/*.sh
+!src/**/*.py
+!tests/**/*.py
+
+# Hard denies. These come last so no allow rule above can re-include them.
+.env*
+*.pem
+*.key
+*.p12
+runs/
+**/calls.jsonl
+.venv/
+__pycache__/

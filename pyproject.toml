@@ -1,0 +1,14 @@
+[project]
+name = "tryout"
+version = "0.0.0"
+description = "Run tasks across AI models, compare them, and keep the evidence."
+requires-python = ">=3.11"
+license = { text = "MIT" }
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
